@@ -22,7 +22,7 @@ AddEventHandler('playerDropped', function(reason)
             players.lastname = player[1].lastname
         end
     elseif Config.Framework == "NewQBCore" then 
-        local player = exports.ghmattimysql:executeSync("SELECT * FROM players WHERE citizenid = @citizenid", {['@citizenid'] = identifier})
+        local player = exports.oxmysql:executeSync("SELECT * FROM players WHERE citizenid = @citizenid", {['@citizenid'] = identifier})
         if player[1] ~= nil then
             players.firstname = player[1].firstname
             players.lastname = player[1].lastname
